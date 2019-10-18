@@ -1,16 +1,15 @@
-const teams = [
-	{
-		name:'Cleveland Indians',
-		titles: 3
-	},
-	{
-		name:'Colorado Rockies',
-		titles: 0
-	},
-	{
-		name:'Los Angeles Angels of Anaheim',
-		titles: 1
-	}
-];
+const mongoose = require ('mongoose');
 
-module.exports = teams;
+//bluepring for our documents that go into collections
+const teamsSchema = new mongoose.Schema ({
+    name: { type: String, required: true},
+    title: {type: Number, required: true},
+});
+
+
+//colltion teams
+//the value of this method is our model that we saved into variable Teams
+//powerful variable
+const Teams = mongoose.model('Teams', teamsSchema);
+
+module.exports = Teams;
