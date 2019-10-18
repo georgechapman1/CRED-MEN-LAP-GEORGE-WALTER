@@ -14,11 +14,10 @@
 				Title: <%=teams[i].titles%>
 			</li>
 
-			
-		</br>
-			<form method="POST" action="/teams/<%=i%>?_method=DELETE">
-			<!-- <button type ='Submit'>Destroy</button> --></form>
-			<!-- <a href="/teams/<%=i%>/edit">Edit Team</a> -->
+
+				<form action="/teams/<%=teams[i]._id%>?_method=DELETE" method="POST">
+                    <button type='Submit'>Delete</button>
+                </form>
 		<%}%>
 	</ul>
 	           <a href="/teams/new">Create a New Team</a>
