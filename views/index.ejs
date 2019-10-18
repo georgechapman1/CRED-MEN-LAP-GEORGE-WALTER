@@ -13,7 +13,8 @@
 
 				Name: <a href="/teams/<%=teams[i]._id%>"><%=teams[i].name%></a>
 				<br/>
-				Titles: <%=teams[i].titles%>
+				Titles: <%=teams[i].titles%> <br/>
+				<a href="/teams/<%=teams[i]._id%>/edit">Edit Team</a>	<!-- EDIT HYPERLINK -->
 			</li>
 
 				<form action="/teams/<%=teams[i]._id%>?_method=DELETE" method="POST">

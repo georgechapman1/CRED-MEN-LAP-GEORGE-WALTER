@@ -22,3 +22,8 @@ module.exports = Teams;
 // 4) Schema gives parameters of what is required for data to be created into a document and then the model stores, 
 // or acts like a container, for many documents
 
+//1) If you are building a restful you are building a server with 4 verbs, get post put and delete with 7 restful routes for
+//reading and manipulating a collection of data
+//2)HTTP reads javascript and converts it to what the client can see while REST is the backend that recieves requests
+// from client to database then sends it back to client
+

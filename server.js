@@ -34,6 +34,45 @@ app.post('/teams', (req, res) => {
     })
 });
 
+//edit
+app.get('/teams/:id/edit', (req, res) => {
+
+  Teams.findById(req.params.id, (err, foundTeams) => {
+    if(err){
+      res.send(err);
+    } else {
+      res.render('edit.ejs', {
+        teams: foundTeams,
+      })
+    }
+  })
+
+});
+
+
+//putting form back into index
+app.put('/teams/:id', (req, res) => {
+  console.log(req.body, 'contents of the form')
+
+  Teams.findByIdAndUpdate(
+    req.params.id, // first is identifier of object we want to update
+    req.body,  // second is object we want to update to
+    {new: true}, // do we want the updated document returned? Yes
+    (err, updatedTeams) => {
+
+    if(err){
+      res.send(err);
+    } else {
+      console.log(updatedTeams);
+       res.redirect('/teams')
+    }
+
+  });
+});
+
+
+
+
 
 // Show route
 app.get('/teams/:id', function(req, res){
