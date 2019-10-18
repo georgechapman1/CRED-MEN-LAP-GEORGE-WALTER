@@ -7,9 +7,11 @@ app.use(bodyParser.urlencoded({extended: false}))
 // app.use(methodOverride('_method'))
 
 //tie data to server
-const baseballTeams = require('./models/baseballTeams.js')
+const teams = require('./models/teams.js')
 
-
+app.get('/teams/new', (req, res) => {
+    res.render('new.ejs')
+})
 
 
 
