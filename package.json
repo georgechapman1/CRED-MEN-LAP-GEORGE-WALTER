@@ -1,0 +1,22 @@
+{
+  "name": "cred-men-lap-george-walter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/georgechapman1/CRED-MEN-LAP-GEORGE-WALTER.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/georgechapman1/CRED-MEN-LAP-GEORGE-WALTER/issues"
+  },
+  "homepage": "https://github.com/georgechapman1/CRED-MEN-LAP-GEORGE-WALTER#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
