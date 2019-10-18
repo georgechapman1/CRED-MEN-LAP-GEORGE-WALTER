@@ -10,14 +10,16 @@
 	<ul>
 		<% for (let i = 0; i<teams.length; i++) { %>
 			<li>
-				Name: <%=teams[i].name%>
-				Title: <%=teams[i].titles%>
-			</li>
 
+				Name: <a href="/teams/<%=teams[i]._id%>"><%=teams[i].name%></a>
+				<br/>
+				Titles: <%=teams[i].titles%>
+			</li>
 
 				<form action="/teams/<%=teams[i]._id%>?_method=DELETE" method="POST">
                     <button type='Submit'>Delete</button>
                 </form>
+                <br/>
 		<%}%>
 	</ul>
 	           <a href="/teams/new">Create a New Team</a>

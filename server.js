@@ -35,6 +35,28 @@ app.post('/teams', (req, res) => {
 });
 
 
+// Show route
+app.get('/teams/:id', function(req, res){
+
+    Teams.findById(req.params.id, (err, foundTeams) => {
+      if(err){
+        res.send(err);
+      } else {
+         console.log(foundTeams)
+         res.render('show.ejs', {
+              teams:  foundTeams // foundTeams
+              // is the the team from the db
+              // we want to show the client
+          });
+      }
+    })
+
+
+
+});
+
+
+
 // Route to index Posting to Index
 app.get('/teams', (req, res) => {
   // empty object says find all the
@@ -51,6 +73,22 @@ app.get('/teams', (req, res) => {
 
 }); // end of .get
 
+
+// delete
+app.delete('/teams/:id', (req, res) => {
+    
+    // our logic to delete
+    Teams.deleteOne({_id: req.params.id}, (err, response) => {
+      if(err){
+        res.send(err);
+      } else {
+        console.log(response);
+        res.redirect('/teams');
+      }
+    })
+    // array method to splice the item out of our model
+    // look up splice go to array splice on mdn
+})
 
 
 
